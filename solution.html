@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Visionary's Climb to Greatness</title>
+  <meta name="description" content="A concrete, optional roadmap of things a founder in Richard Heart's position could do to support PulseChain — with rough cost, risk, and upside for each." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📑</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Patrick+Hand&family=Permanent+Marker&family=Schoolbell&family=Special+Elite&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --desk: #6a4a2a;
+      --desk-dark: #4a3220;
+      --paper: #fbf3d9;
+      --paper-shadow: rgba(60, 40, 10, 0.35);
+      --rule-blue: #8eb4dc;
+      --margin-red: #e8a3a8;
+      --ink-red: #c41e2a;
+      --ink-red-dark: #962020;
+      --ink-blue: #2c4f9a;
+      --pencil: #2a2622;
+      --pencil-dim: #6b6258;
+      --gold: #f4c430;
+      --tape: rgba(244, 232, 180, 0.7);
+      --stamp: #b81b22;
+      --green-ink: #2f6b3a;
+      --amber-ink: #b56a16;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background:
+        radial-gradient(ellipse at top, rgba(0,0,0,0.15), transparent 60%),
+        repeating-linear-gradient(
+          92deg,
+          var(--desk) 0 60px,
+          var(--desk-dark) 60px 62px,
+          var(--desk) 62px 140px
+        );
+      background-attachment: fixed;
+      color: var(--pencil);
+      font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
+      font-size: 19px;
+      line-height: 1.55;
+      min-height: 100vh;
+      padding: 40px 16px 80px;
+    }
+
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.65;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .paper {
+      position: relative;
+      background: var(--paper);
+      background-image:
+        radial-gradient(ellipse at 20% 10%, rgba(120, 80, 30, 0.06), transparent 60%),
+        radial-gradient(ellipse at 80% 90%, rgba(120, 80, 30, 0.07), transparent 60%);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.4) inset,
+        0 18px 36px var(--paper-shadow),
+        0 6px 14px rgba(0,0,0,0.25);
+      border-radius: 3px;
+      padding: 48px 48px 56px;
+    }
+    .paper::after {
+      content: "";
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='1' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.4  0 0 0 0 0.25  0 0 0 0 0.05  0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23p)'/></svg>");
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      border-radius: 3px;
+    }
+
+    .tape {
+      position: absolute;
+      width: 90px; height: 26px;
+      background: var(--tape);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      border-left: 1px dashed rgba(0,0,0,0.05);
+      border-right: 1px dashed rgba(0,0,0,0.05);
+      transform: rotate(-4deg);
+    }
+    .tape.tl { top: -10px; left: 30px; transform: rotate(-6deg); }
+    .tape.tr { top: -12px; right: 40px; transform: rotate(5deg); }
+    .tape.bl { bottom: -10px; left: 60px; transform: rotate(3deg); }
+    .tape.br { bottom: -10px; right: 70px; transform: rotate(-7deg); }
+
+    /* ---------- COVER ---------- */
+    .cover {
+      margin-bottom: 36px;
+      padding: 40px 48px 44px;
+      transform: rotate(-0.3deg);
+    }
+    .cover h1 {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      color: var(--ink-red);
+      line-height: 1;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .cover h1 .underline {
+      display: inline-block;
+      border-bottom: 3px wavy var(--ink-red);
+      padding-bottom: 2px;
+    }
+    .cover-sub {
+      font-family: 'Caveat', cursive;
+      font-size: 1.85rem;
+      color: var(--ink-blue);
+      margin-bottom: 22px;
+      text-align: center;
+    }
+    .cover-stamp {
+      position: absolute;
+      top: 22px; right: 22px;
+      font-family: 'Permanent Marker', cursive;
+      color: var(--stamp);
+      border: 4px double var(--stamp);
+      padding: 6px 18px 4px;
+      transform: rotate(8deg);
+      letter-spacing: 1px;
+      font-size: 13px;
+      opacity: 0.85;
+      background: rgba(255,255,255,0.4);
+    }
+    .cover p {
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+    }
+    .cover .legend {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--pencil-dim);
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+    .cover .legend strong { color: var(--ink-red); font-family: 'Permanent Marker'; letter-spacing: 1px; }
+
+    /* ---------- OPTION CARDS ---------- */
+    .option {
+      margin-bottom: 38px;
+      padding: 38px 42px 42px;
+    }
+    .option:nth-of-type(odd)  { transform: rotate(-0.25deg); }
+    .option:nth-of-type(even) { transform: rotate(0.3deg); }
+
+    .option-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 2px dashed var(--pencil-dim);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .option-num {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 1.1rem;
+      color: var(--ink-red);
+      letter-spacing: 2px;
+    }
+    .option-title {
+      flex: 1 1 60%;
+      font-family: 'Caveat', cursive;
+      font-size: 2rem;
+      line-height: 1.05;
+      color: var(--pencil);
+    }
+    .option-title em { color: var(--ink-blue); font-style: italic; }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px 14px;
+      margin-bottom: 22px;
+    }
+    .meta-cell {
+      border: 1px dashed var(--pencil-dim);
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.35);
+      border-radius: 2px;
+    }
+    .meta-cell .meta-label {
+      font-family: 'Special Elite', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--pencil-dim);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .meta-cell .meta-value {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.05rem;
+      color: var(--pencil);
+    }
+    .tilde {
+      display: inline-block;
+      position: relative;
+      top: 0.18em;
+    }
+
+    .pill {
+      display: inline-block;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      padding: 1px 10px 0;
+      border: 2px solid currentColor;
+      border-radius: 2px;
+      transform: rotate(-1deg);
+    }
+    .pill.low    { color: var(--green-ink); }
+    .pill.medium { color: var(--amber-ink); }
+    .pill.high   { color: var(--ink-red); }
+
+    .option h4 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.5rem;
+      color: var(--ink-red);
+      margin: 18px 0 6px;
+    }
+    .option ul {
+      margin: 6px 0 6px 24px;
+    }
+    .option ul li {
+      margin-bottom: 6px;
+      padding-left: 6px;
+    }
+    .option p { margin-bottom: 10px; }
+
+    /* ---------- PAIRED OPTIONS ---------- */
+    .pair-wrap { margin-bottom: 38px; }
+    .pair-label {
+      display: block;
+      font-family: 'Permanent Marker', cursive;
+      color: var(--ink-red);
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 14px;
+      transform: rotate(-0.6deg);
+      opacity: 0.9;
+    }
+    .pair-label::before,
+    .pair-label::after {
+      content: " — ";
+      color: var(--pencil-dim);
+    }
+    .pair-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+    .pair-row .option {
+      margin-bottom: 0;
+      padding: 32px 28px 36px;
+    }
+    .pair-row .option-title { font-size: 1.7rem; }
+    .pair-row .meta-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 820px) {
+      .pair-row { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- TABLE OF OPTIONS ---------- */
+    .summary {
+      margin-bottom: 50px;
+      padding: 36px 38px 40px;
+      transform: rotate(0.2deg);
+    }
+    .summary h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: var(--ink-red);
+      margin-bottom: 8px;
+    }
+    .summary-note {
+      font-family: 'Special Elite', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--pencil-dim);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1rem;
+      margin-top: 6px;
+    }
+    .summary-table th,
+    .summary-table td {
+      padding: 8px 10px;
+      border-bottom: 1px dashed var(--pencil-dim);
+      text-align: left;
+      vertical-align: top;
+    }
+    .summary-table th {
+      font-family: 'Special Elite', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--pencil-dim);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--pencil-dim);
+    }
+    .summary-table td a {
+      color: var(--ink-blue);
+      text-decoration: none;
+      border-bottom: 1px solid var(--pencil-dim);
+    }
+    .summary-table td a:hover { color: var(--ink-red); border-color: var(--ink-red); }
+    .summary-table tr.or-row td {
+      border: none !important;
+      padding: 0;
+      height: 0;
+      line-height: 0;
+      text-align: center;
+      position: relative;
+    }
+    .summary-table tr.or-row td span {
+      position: absolute;
+      left: 50%;
+      top: -10px;
+      transform: translateX(-50%);
+      display: inline-block;
+      background: var(--paper);
+      padding: 0 14px;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      color: var(--ink-red);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ---------- DISCLAIMER ---------- */
+    .disclaimer-card {
+      margin-bottom: 40px;
+      padding: 28px 36px 30px;
+      transform: rotate(-0.2deg);
+    }
+    .disclaimer-card h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.7rem;
+      color: var(--ink-red);
+      margin-bottom: 8px;
+    }
+    .disclaimer-card p {
+      font-size: 1rem;
+      color: var(--pencil-dim);
+      font-family: 'Patrick Hand', cursive;
+    }
+
+    .footer {
+      margin-top: 50px;
+      text-align: center;
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      color: var(--paper);
+      letter-spacing: 2px;
+      opacity: 0.85;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 720px) {
+      body { padding: 20px 8px 60px; font-size: 17px; }
+      .paper { padding: 32px 22px 38px; }
+      .cover { padding: 28px 22px 32px; }
+      .option { padding: 30px 22px 34px; }
+      .summary { padding: 28px 22px 32px; }
+      .meta-grid { grid-template-columns: 1fr 1fr; }
+      .cover .legend { grid-template-columns: 1fr; }
+      .summary-table th, .summary-table td { padding: 6px 6px; font-size: 0.95rem; }
+      .option-title { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ============ COVER ============ -->
+    <div class="paper cover">
+      <h1>A Visionary's <span class="underline">Climb to Greatness</span></h1>
+      <div class="cover-sub">— the playbook for reclaiming the throne —</div>
+      <div class="cover-sub">— the roadmap to a legendary second act —</div>
+      <div class="cover-sub">— the foundation of a second masterpiece —</div>
+
+      <p>
+        A constructive menu of high-impact actions a founder in
+        Richard Heart's position could take to support the PulseChain
+        ecosystem — each entry with rough cost, risk, and expected upside.
+      </p>
+      <p>
+        Items are roughly ordered by when they would need to start. Long-lead
+        items (months+ to bear fruit) and trivial quick wins are at the top,
+        because both should not wait.
+      </p>
+      <p>
+        Some entries appear as a pair — two different ways to solve the same
+        underlying problem. Only one of each pair needs to be chosen.
+      </p>
+      <p>
+        None of these are demands. They are not exhaustive. They are simply
+        a starting point — written by the same community that has spent
+        years running independent infra, building tools, writing the docs
+        that don't exist, shipping wallets and explorers and dashboards,
+        and defending the chain in every public forum, all on their own
+        time and their own dime, while the founder's own communications
+        have been infrequent and generally off-topic.
+      </p>
+      <p>
+        That asymmetry is the backdrop to everything below. Most of these
+        suggestions are cheap. Several are free. The community would just
+        like to see something — anything — coming back the other way.
+      </p>
+
+      <div class="legend">
+        <div><strong>Effort</strong> — rough founder time + capital required.</div>
+        <div><strong>Risk</strong> — how much could go wrong if pursued.</div>
+        <div><strong>Upside</strong> — what a successful execution unlocks.</div>
+        <div><strong>Pair</strong> — paired entries are alternatives; pick one.</div>
+      </div>
+    </div>
+
+    <!-- ============ SUMMARY TABLE ============ -->
+    <div class="paper summary">
+      <span class="tape tl"></span>
+      <span class="tape tr"></span>
+      <span class="cover-stamp">EXTRA CREDIT</span>
+      <h2>The Menu, At A Glance</h2>
+      <div class="summary-note">Ordered by recommended start date · paired rows = pick one</div>
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Option</th>
+            <th>Effort</th>
+            <th>Risk</th>
+            <th>Upside</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td><a href="#opt-x-account">Reactivate the official @pulsechaincom X account</a></td>
+            <td>Trivial</td>
+            <td>Low</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td><a href="#opt-comms">Video communication frequency</a></td>
+            <td>Low</td>
+            <td>Low</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td><a href="#opt-floor">Floor the price (defensive)</a></td>
+            <td>High</td>
+            <td>Medium</td>
+            <td>High</td>
+          </tr>
+          <tr class="or-row"><td colspan="5"><span>or</span></td></tr>
+          <tr>
+            <td>04</td>
+            <td><a href="#opt-pump">Pump the price (offensive — god candles · slow grind)</a></td>
+            <td>High</td>
+            <td>Medium</td>
+            <td>Very High</td>
+          </tr>
+          <tr>
+            <td>05</td>
+            <td><a href="#opt-acquire">Acquire an existing crypto exchange</a></td>
+            <td>Very High</td>
+            <td>High</td>
+            <td>Very High</td>
+          </tr>
+          <tr class="or-row"><td colspan="5"><span>or</span></td></tr>
+          <tr>
+            <td>06</td>
+            <td><a href="#opt-build">Build a Tier-1 exchange from scratch</a></td>
+            <td>Very High</td>
+            <td>High</td>
+            <td>Very High</td>
+          </tr>
+          <tr>
+            <td>07</td>
+            <td><a href="#opt-pr">Engage an S-tier PR / institutional outreach team</a></td>
+            <td>Medium</td>
+            <td>Low</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>08</td>
+            <td><a href="#opt-meme">Pump an official pump.tires meme coin</a></td>
+            <td>Low</td>
+            <td>Medium</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>09</td>
+            <td><a href="#opt-farms">Revamp PulseX farms with new incentives</a></td>
+            <td>Low</td>
+            <td>Low</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><a href="#opt-promote">Properly promote / explain the new protocol (PRVX)</a></td>
+            <td>Low</td>
+            <td>Low</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td><a href="#opt-support">Visibly support the community</a></td>
+            <td>Trivial</td>
+            <td>Low</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td><a href="#opt-spaces">Attend community spaces &amp; events</a></td>
+            <td>Low</td>
+            <td>Low</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td><a href="#opt-resync">Re-sync the community with the current vision</a></td>
+            <td>Low</td>
+            <td>Low</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td><a href="#opt-bridge">Bridge a chunk of ETH onto the chain</a></td>
+            <td>Low</td>
+            <td>Low</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td><a href="#opt-pulsex">Updates to PulseX</a></td>
+            <td>Low</td>
+            <td>Low</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td><a href="#opt-explorer-fix">Fix the main block explorer</a></td>
+            <td>Low</td>
+            <td>Low</td>
+            <td>Medium</td>
+          </tr>
+          <tr class="or-row"><td colspan="5"><span>or</span></td></tr>
+          <tr>
+            <td>17</td>
+            <td><a href="#opt-explorer-collab">Collab with a community team running a more accurate explorer</a></td>
+            <td>Trivial</td>
+            <td>Low</td>
+            <td>Medium</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============ OPTION 01 — X ACCOUNT ============ -->
+    <div id="opt-x-account" class="paper option">
+      <span class="tape tl"></span>
+      <div class="option-header">
+        <span class="option-num">OPTION 01</span>
+        <h3 class="option-title">Reactivate the official <em>@pulsechaincom X account</em></h3>
+      </div>
+
+      <h4>Why it matters</h4>
+      <p>
+        The official chain account is the most basic public-facing surface
+        of the project. A long-dormant feed signals to every new visitor
+        that the chain is uncared for. Reviving it costs effectively
+        nothing and clears the absolute lowest bar of basic stewardship.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value"><span class="tilde">~</span>30 min / month</span></div>
+        <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value"><span class="tilde">~</span>$0</span></div>
+        <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill low">LOW</span></span></div>
+        <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill high">HIGH</span></span></div>
+      </div>
+      <p>
+        The official @pulsechaincom X account has been dormant for a long time.
+        It does not have to be the founder's personal voice — a small team,
+        or even an AI, can run it and post operational updates only.
+      </p>
+      <h4>How it could work</h4>
+      <ul>
+        <li>Hand the account to a 1–2 person comms operator (or an AI assistant under light supervision) with a posting calendar.</li>
+        <li>Stick to non-controversial topics: infra status, partnerships, listings, devnet/mainnet activity.</li>
+        <li>Keeps founder personally insulated from ongoing legal exposure.</li>
+      </ul>
+      <h4>Risks</h4>
+      <ul>
+        <li>Anyone with the keys to the account can speak for the chain — picks must be trustworthy.</li>
+        <li>Whoever runs it must avoid speculative or price-related language.</li>
+      </ul>
+    </div>
+
+    <!-- ============ OPTION 02 — VIDEO COMMS ============ -->
+    <div id="opt-comms" class="paper option">
+      <span class="tape tr"></span>
+      <div class="option-header">
+        <span class="option-num">OPTION 02</span>
+        <h3 class="option-title">Video <em>communication frequency</em></h3>
+      </div>
+
+      <h4>Why it matters</h4>
+      <p>
+        Founder voice is what built the chain in the first place. The
+        community has spent years filling the leadership-comms gap
+        themselves. Even a thin, consistent cadence — including "here is
+        what I cannot talk about, and why" — would land as leadership
+        instead of drift.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value"><span class="tilde">~</span>1 hour / month</span></div>
+        <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value"><span class="tilde">~</span>$0</span></div>
+        <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill low">LOW</span></span></div>
+        <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill high">HIGH</span></span></div>
+      </div>
+      <p>
+        Resume a regular, lightweight cadence of founder-voiced video
+        communication. Doesn't have to be the old multi-hour livestream —
+        a 5–10 minute recorded address is enough to break the current
+        leadership-comms gap. Even simply explaining why he can't speak on
+        certain topics would itself be a major upgrade over the current
+        cadence, which to many has felt distant.
+      </p>
+      <h4>How it could work</h4>
+      <ul>
+        <li>Short recorded video on a regular cadence (monthly is enough).</li>
+        <li>Stick to non-legal topics: roadmap, hiring, partnerships, infra status — or simply: "here is what I cannot talk about, and why."</li>
+        <li>Pre-announce dates so the community knows when to expect them.</li>
+      </ul>
+      <h4>Risks</h4>
+      <ul>
+        <li>Anything said publicly can be cited in ongoing matters — needs counsel review.</li>
+        <li>Setting a cadence creates an expectation that must then be met.</li>
+      </ul>
+    </div>
+
+    <!-- ============ THEME — PRICE GO UP ============ -->
+    <div class="paper option" style="transform: rotate(-0.15deg);">
+      <span class="tape tl"></span>
+      <div class="option-header" style="border-bottom-style: solid; border-bottom-color: var(--ink-red);">
+        <span class="option-num">THEME</span>
+        <h3 class="option-title">"<em>Price go up</em>" — why it is a strategy on its own</h3>
+      </div>
+      <p>
+        The chain has lived in a sustained downtrend long enough that
+        "number go down" has become the default expectation. Reversing
+        that is itself a strategy, not just a side-effect of doing other
+        things. Whoever directs ecosystem-aligned capital has direct
+        levers to engineer the price upward — and good reasons to use them.
+      </p>
+      <h4>Why price going up matters</h4>
+      <ul>
+        <li><strong>Reflexivity</strong> — a sustained green tape attracts new buyers, who push it higher, who attract more buyers. Down-trends run the same loop in reverse.</li>
+        <li><strong>Dollar-denominated optics</strong> — every TVL figure, every liquidity pool, every bridge total, every holder's portfolio looks healthier the moment price climbs. The chain instantly appears more alive.</li>
+        <li><strong>Locks the jeets out</strong> — a steady uptrend trains the marginal seller to hold rather than dump on every spike. Paper hands transfer to stronger hands; structural sell pressure falls.</li>
+        <li><strong>Listing optics</strong> — Tier-1 exchanges weight token momentum heavily. A chart that goes up makes the exchange options below dramatically easier.</li>
+        <li><strong>Asymmetric accumulation window</strong> &mdash; participants with meaningful influence over supply have a structural opportunity to accumulate with substantially reduced dump risk once a credible floor or uptrend is in place. That window is wide open and currently going unused.</li>
+      </ul>
+      <p style="margin-top: 14px; font-style: italic; color: var(--pencil-dim);">
+        The next two options are the two ways to act on this theme — defensively, or offensively.
+      </p>
+    </div>
+
+    <!-- ============ PAIR — FLOOR vs PUMP ============ -->
+    <div class="pair-wrap">
+      <span class="pair-label">Two ways to engineer the price · pick one (or both)</span>
+      <div class="pair-row">
+
+        <!-- OPTION 03 — FLOOR -->
+        <div id="opt-floor" class="paper option">
+          <span class="tape tl"></span>
+          <div class="option-header">
+            <span class="option-num">OPTION 03</span>
+            <h3 class="option-title">Floor <em>the price</em></h3>
+          </div>
+
+          <h4>Why it matters</h4>
+          <p>
+            The single biggest reason serious capital does not sit on the
+            chain is the open-ended tail-risk of price collapse. A credible,
+            persistent floor is the most direct way to address that — and
+            is uniquely available to whoever directs ecosystem-aligned
+            capital.
+          </p>
+
+          <div class="meta-grid">
+            <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value">start immediately, run indefinitely</span></div>
+            <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value">$10M–$100M+ rotating</span></div>
+            <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill medium">MEDIUM</span></span></div>
+            <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill high">HIGH</span></span></div>
+          </div>
+          <p>
+            <strong>Defensive.</strong> Don't try to push price upward —
+            simply put a credible, public floor underneath it. For example,
+            near the original sacrifice price. Optionally ratchet that floor
+            slowly upward over months. The point is to remove the bottomless
+            tail-risk that keeps long-term capital off the chain.
+          </p>
+          <h4>How it could work</h4>
+          <ul>
+            <li>Pre-commit to a transparent floor price, possibly with a published rate of upward ratchet.</li>
+            <li>Bid is visible on-chain or routed through a transparent execution vehicle.</li>
+            <li>Variant: hold the floor flat indefinitely rather than walking it up — both materially change the holder calculus.</li>
+          </ul>
+          <h4>Why a floor is asymmetric — a theoretical level</h4>
+          <p>
+            For the purposes of this discussion only — and frame this as
+            theoretical, since the precise mechanics depend on which
+            sacrifice asset and which proceeds: there is a price level
+            roughly equal to <em>(amount raised at sacrifice) ÷ (current
+            circulating supply)</em>. <strong>Below</strong> that level,
+            an entity that originally collected sacrifice proceeds could,
+            in a net-trade sense, re-accumulate the same tokens for less
+            than was originally raised. Above it, the same defence costs
+            more than it returns. So a floor placed at-or-near that
+            theoretical level is — in a sense — closer to a profitable
+            re-buy than to charity.
+          </p>
+          <p style="font-size: 0.95rem; color: var(--pencil-dim);">
+            (None of the above implies anyone <em>does</em> direct those
+            proceeds — only that the maths exists and is calculable.)
+          </p>
+          <h4>Risks</h4>
+          <ul>
+            <li>Burns capital fastest exactly when the support matters most.</li>
+            <li>Public, durable price support can be characterised as market manipulation — needs careful structuring.</li>
+            <li>If withdrawn, the floor failing is worse than never having had one.</li>
+          </ul>
+        </div>
+
+        <!-- OPTION 04 — PUMP -->
+        <div id="opt-pump" class="paper option">
+          <span class="tape tr"></span>
+          <div class="option-header">
+            <span class="option-num">OPTION 04</span>
+            <h3 class="option-title">Pump <em>the price</em></h3>
+          </div>
+
+          <h4>Why it matters</h4>
+          <p>
+            Reflexivity, dollar-denominated optics, and listing optics all
+            favour up. The chain has lived in a sustained downtrend long
+            enough that "number go down" has become the default
+            expectation. Reversing that is itself a strategy, not just a
+            side-effect of doing other things.
+          </p>
+
+          <div class="meta-grid">
+            <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value">days to months, ongoing</span></div>
+            <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value">$5M–$50M+ deployed</span></div>
+            <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill medium">MEDIUM</span></span></div>
+            <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill high">VERY HIGH</span></span></div>
+          </div>
+          <p>
+            <strong>Offensive.</strong> Actively walk the price upward
+            instead of just defending it. Two flavours, usable separately
+            or together:
+          </p>
+          <ul>
+            <li><strong>"God candles"</strong> — occasional, deliberate, large coordinated buys that produce visible green candles. Cheap-per-dollar of sentiment, especially when timed against thin sell-side books.</li>
+            <li><strong>Slow grind</strong> — a steady, mechanical buy programme spread across time. Less dramatic, harder to fade, lower per-day cost — the tortoise version of the same thesis.</li>
+          </ul>
+          <h4>How it could work</h4>
+          <ul>
+            <li>Run through a transparent execution vehicle.</li>
+            <li>Publish the rule, not the timing — so the market knows the buy-side exists, but cannot front-run individual transactions.</li>
+          </ul>
+          <h4>Risks</h4>
+          <ul>
+            <li>Visible directional buying can be characterised as manipulation by hostile observers — counsel-led structuring is essential.</li>
+            <li>Over-engineered candles are obvious to seasoned traders and can attract aggressive shorting wherever shorts exist.</li>
+            <li>Sustained upward pressure also attracts derivative-market predators willing to fight the bid.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============ PAIR B — TIER-1 VENUE ============ -->
+    <div class="pair-wrap">
+      <span class="pair-label">Two ways to guarantee a Tier-1 venue · pick one</span>
+      <div class="pair-row">
+
+        <!-- OPTION 05 — ACQUIRE -->
+        <div id="opt-acquire" class="paper option">
+          <span class="tape tl"></span>
+          <div class="option-header">
+            <span class="option-num">OPTION 05</span>
+            <h3 class="option-title">Acquire an <em>existing crypto exchange</em></h3>
+          </div>
+
+          <h4>Why it matters</h4>
+          <p>
+            The chain's biggest single weakness is venue access for retail.
+            Solving it via acquisition is faster and more certain than
+            waiting for a Tier-1 to volunteer.
+          </p>
+
+          <div class="meta-grid">
+            <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value">6–12 months to close</span></div>
+            <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value">$50M–$500M+</span></div>
+            <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill high">HIGH</span></span></div>
+            <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill high">VERY HIGH</span></span></div>
+          </div>
+          <p>
+            Acquire a mid-tier or struggling licensed exchange and force-list
+            PLS / PLSX / HEX as part of the integration. Fastest path to a
+            real Tier-1 venue without going through the listing gauntlet.
+          </p>
+          <h4>How it could work</h4>
+          <ul>
+            <li>Target a regulated mid-cap exchange with retail flow but distressed unit economics.</li>
+            <li>Use existing licenses (US MTL stack, EU MiCA, etc.) rather than starting from zero.</li>
+            <li>Run the venue at arms-length; listings decided by an independent committee.</li>
+          </ul>
+          <h4>Risks</h4>
+          <ul>
+            <li>Regulatory: ongoing legal matters complicate any "control person" filing.</li>
+            <li>Optics: a venue closely affiliated with the chain, listing those same tokens, would need real governance to avoid the perception of self-dealing.</li>
+            <li>Operational: running an exchange is its own full-time business.</li>
+          </ul>
+        </div>
+
+        <!-- OPTION 06 — BUILD -->
+        <div id="opt-build" class="paper option">
+          <span class="tape tr"></span>
+          <div class="option-header">
+            <span class="option-num">OPTION 06</span>
+            <h3 class="option-title">Build a <em>Tier-1 exchange</em> from scratch</h3>
+          </div>
+
+          <h4>Why it matters</h4>
+          <p>
+            If the long-term thesis is "the chain stays around for decades,"
+            guaranteeing it always has a Tier-1 venue to live on is worth
+            building once and owning forever. Costlier than acquiring,
+            but no longer dependent on a third party's listing decisions.
+          </p>
+
+          <div class="meta-grid">
+            <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value">1–2 years to credible Tier-1</span></div>
+            <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value">$200M+ launch, $50M+/yr</span></div>
+            <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill high">HIGH</span></span></div>
+            <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill high">VERY HIGH</span></span></div>
+          </div>
+          <p>
+            The harder, more permanent version of Option 05. Build a fully
+            owned Tier-1-grade exchange from zero. Slower and more capital
+            intensive, but ends with an asset whose value compounds with
+            the ecosystem rather than depleting the treasury.
+          </p>
+          <h4>How it could work</h4>
+          <ul>
+            <li>Pursue licenses in parallel: US MTLs (or partner BD), EU MiCA, UK FCA, Singapore MAS, etc.</li>
+            <li>Hire compliance + matching-engine talent from existing Tier-1 venues.</li>
+            <li>Launch with PLS / PLSX / HEX day-one, plus majors so it's a real general-purpose exchange.</li>
+          </ul>
+          <h4>Risks</h4>
+          <ul>
+            <li>Years of cash burn before break-even.</li>
+            <li>Severe regulatory headwinds for new entrants, especially in the US.</li>
+            <li>Founder reputation becomes inseparable from exchange's reputation.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============ OPTION 07 — PR ============ -->
+    <div id="opt-pr" class="paper option">
+      <span class="tape tr"></span>
+      <div class="option-header">
+        <span class="option-num">OPTION 07</span>
+        <h3 class="option-title">Engage an <em>S-tier PR &amp; institutional outreach</em> team</h3>
+      </div>
+
+      <h4>Why it matters</h4>
+      <p>
+      The biggest single objection from Tier-1 venues is "no one ever
+      contacts us officially." That is a fixable, cheap problem.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value"><span class="tilde">~</span>1 quarter to ramp</span></div>
+        <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value">$1–5M / year</span></div>
+        <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill low">LOW</span></span></div>
+        <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill medium">MEDIUM</span></span></div>
+      </div>
+
+      <p>
+        Hire (or contract) a real crypto PR / IR firm to talk to exchanges,
+        custodians, ETF issuers, payment rails, and trad-fi research desks.
+        Done quietly, not loudly. Most Tier-1 listings happen because
+        someone in suits showed up — not because of organic Twitter pressure.
+      </p>
+
+      <h4>How it could work</h4>
+      <ul>
+        <li>Mandate covers: Tier-1 listing pitches, custodian integrations, research desk briefings.</li>
+        <li>Quarterly KPIs: meetings booked, listings under review, integrations shipped.</li>
+        <li>Run independently of founder personal channels.</li>
+      </ul>
+
+      <h4>Risks</h4>
+      <ul>
+        <li>Easy to spend a lot for nothing if the firm is a relationship-billing operation only.</li>
+        <li>Founder's personal brand may either help or hinder — needs careful framing.</li>
+      </ul>
+    </div>
+
+    <!-- ============ OPTION 08 — MEME COIN PUMP ============ -->
+    <div id="opt-meme" class="paper option">
+      <span class="tape tl"></span>
+      <div class="option-header">
+        <span class="option-num">OPTION 08</span>
+        <h3 class="option-title">Pump an official <em>pump.tires meme coin</em></h3>
+      </div>
+      <h4>Why it matters</h4>
+      <p>
+      Meme momentum is one of the cheapest, fastest sentiment levers in
+      crypto. The community is already primed for it; what is missing is
+      a single visible act that tells holders the chain is alive and
+      being played with, not just sat on.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value">days</span></div>
+        <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value">$500k–$5M</span></div>
+        <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill medium">MEDIUM</span></span></div>
+        <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill medium">MEDIUM</span></span></div>
+      </div>
+
+      <p>
+        Pick one of the official pump.tires meme coins and visibly back it —
+        a coordinated buy, public commentary, or both. The point is to
+        re-introduce a sense of momentum and play to the chain. Meme energy
+        is its own form of marketing, and the chain has lacked any of it
+        for a long time.
+      </p>
+
+      <h4>How it could work</h4>
+      <ul>
+        <li>Pre-announce nothing. Move first; let the market notice.</li>
+        <li>Choose a coin with reasonable distribution and an active community already, not a dead launch.</li>
+        <li>Pair with a single piece of public content (X post, short clip) to convert the on-chain action into narrative.</li>
+      </ul>
+
+      <h4>Risks</h4>
+      <ul>
+        <li>Holders of <em>other</em> meme coins on the chain may feel slighted — picking one always means not picking the rest.</li>
+        <li>If the pump fades fast, the failure is more public than the success would have been.</li>
+        <li>Visible buying of any specific token can be characterised as manipulation by hostile observers — needs structuring care.</li>
+      </ul>
+    </div>
+
+    <!-- ============ OPTION 09 — PULSEX FARMS REVAMP ============ -->
+    <div id="opt-farms" class="paper option">
+      <span class="tape tl"></span>
+      <div class="option-header">
+        <span class="option-num">OPTION 09</span>
+        <h3 class="option-title">Revamp <em>PulseX farms</em> with new incentives</h3>
+      </div>
+      <h4>Why it matters</h4>
+      <p>
+      Even without direct economic impact, this gives holders a steady
+      drip of things to be hyped about. The chain has a serious
+      engagement deficit; the farms are the lowest-cost, most-flexible
+      place to start fixing it.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value"><span class="tilde">~</span>1 quarter to design + ship</span></div>
+        <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value">existing emissions, no new spend</span></div>
+        <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill low">LOW</span></span></div>
+        <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill medium">MEDIUM</span></span></div>
+      </div>
+
+      <p>
+        PulseX farms exist and are quietly running, but they're not being
+        used to actually <em>excite</em> anyone. Even without changing the
+        underlying tokenomics, the farms are a flexible product surface:
+        boosted weeks, themed pools, leaderboard mechanics, surprise
+        bonuses — none of these need
+        big new capital, and all of them give the community something
+        fresh to talk about.
+      </p>
+
+      <h4>How it could work</h4>
+      <ul>
+        <li>Themed boost weeks (e.g. "OG sacrifice token week", "newest meme pool week", "stables week") with playful narrative around them.</li>
+        <li>Leaderboards / streak rewards for sustained LP — gamify what is currently a passive product.</li>
+        <li>Surprise mid-week incentive drops — small, frequent dopamine hits beat one big quarterly change.</li>
+      </ul>
+
+      <h4>Risks</h4>
+      <ul>
+        <li>Bad rebalancing can crater specific pools' yields and upset the LPs who just left them.</li>
+        <li>Frequent changes need clear communication or they look chaotic instead of fun.</li>
+      </ul>
+    </div>
+
+    <!-- ============ OPTION 10 — PROMOTE NEWER PROTOCOL ============ -->
+    <div id="opt-promote" class="paper option">
+      <span class="tape tr"></span>
+      <div class="option-header">
+        <span class="option-num">OPTION 10</span>
+        <h3 class="option-title">Properly promote and <em>explain the new protocol (PRVX)</em></h3>
+      </div>
+      <h4>Why it matters</h4>
+      <p>
+      Right now PRVX is doing zero work for the chain's
+      narrative. A clear, honest explanation is one of the cheapest
+      sentiment levers available — and is purely a comms problem, not
+      a capital one.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value">a few weeks to ship a real explainer</span></div>
+        <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value"><span class="tilde">~</span>$0–$200k</span></div>
+        <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill low">LOW</span></span></div>
+        <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill medium">MEDIUM</span></span></div>
+      </div>
+
+      <p>
+        The older projects on the chain are roughly self-explanatory —
+        and where they aren't, the community has filled in the gaps. The
+        PRVX launch has had the opposite experience: a lot of
+        people genuinely cannot say in plain words what it does or why
+        it matters. Promotion of it has been thin. That is fixable.
+      </p>
+
+      <h4>How it could work</h4>
+      <ul>
+        <li>A single, plain-English landing page: <em>what is it, who is it for, why now</em>. Not a whitepaper.</li>
+        <li>Short explainer video (3–5 min) covering the same — same cadence used to be a strength of this ecosystem.</li>
+        <li>Worked examples: "here's a holder using it on day one, here's what they did, here's what they got."</li>
+        <li>Outreach to the existing builder / commentator circle so the explanations propagate.</li>
+      </ul>
+
+      <h4>Risks</h4>
+      <ul>
+        <li>If the protocol genuinely doesn't have a clean use-case, no amount of marketing will fix that — better explanations also expose weak fundamentals.</li>
+        <li>Bad framing (overclaim) does more damage than no framing.</li>
+      </ul>
+    </div>
+
+    <!-- ============ OPTION 11 — VISIBLY SUPPORT THE COMMUNITY ============ -->
+    <div id="opt-support" class="paper option">
+      <span class="tape tl"></span>
+      <div class="option-header">
+        <span class="option-num">OPTION 11</span>
+        <h3 class="option-title">Visibly <em>support the community</em></h3>
+      </div>
+      <h4>Why it matters</h4>
+      <p>
+      The community has done the work no founder is obliged to do.
+      The asymmetry is not subtle. Every basic, low-cost gesture of
+      reciprocation here both rebuilds goodwill and makes every other
+      item on this list dramatically easier to land.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value"><span class="tilde">~</span>10 min / week</span></div>
+        <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value"><span class="tilde">~</span>$0</span></div>
+        <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill low">LOW</span></span></div>
+        <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill high">HIGH</span></span></div>
+      </div>
+
+      <p>
+        For years the community has carried the chain almost single-handedly:
+        running independent infra, providing education,
+        shipping wallets and dashboards and explorers, defending the chain
+        in every public forum, building memes, podcasts, content, sites
+        like the one you are reading right now — all on their own time and
+        their own dime. The community has supported the project with a
+        loyalty that is genuinely rare in crypto. Reciprocating that, even
+        in tiny ways, would mean a lot.
+      </p>
+
+      <h4>How it could work</h4>
+      <ul>
+        <li>Public shout-outs — name specific community projects, quote their work, repost their threads. Costs nothing, signals everything.</li>
+        <li>Direct one-to-one acknowledgement of long-standing contributors when they ship something. Even a single line.</li>
+        <li>Optional: small grants or bounties for community projects that have been running unfunded for years. Token amounts to the people who have been donating their labour.</li>
+        <li>Public thank-you posts on official channels — once a month is enough.</li>
+      </ul>
+
+      <h4>Risks</h4>
+      <ul>
+        <li>Selective acknowledgement risks looking like favouritism — needs to be broad and consistent.</li>
+        <li>If treated as a one-off PR move it lands worse than not doing it at all.</li>
+      </ul>
+    </div>
+
+    <!-- ============ OPTION 12 — ATTEND SPACES & EVENTS ============ -->
+    <div id="opt-spaces" class="paper option">
+      <span class="tape tr"></span>
+      <div class="option-header">
+        <span class="option-num">OPTION 12</span>
+        <h3 class="option-title">Attend <em>community spaces &amp; events</em></h3>
+      </div>
+      <h4>Why it matters</h4>
+      <p>
+      Presence is a signal. The community has carried these spaces and
+      events through every drawdown. Being in the room — even
+      occasionally, even briefly — would do more for morale than most
+      multi-million-dollar moves on this list.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value"><span class="tilde">~</span>1–2 hours / month</span></div>
+        <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value"><span class="tilde">~</span>$0</span></div>
+        <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill low">LOW</span></span></div>
+        <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill high">HIGH</span></span></div>
+      </div>
+
+      <p>
+        Drop into a community-run X Space, podcast, or in-person meet-up
+        every now and then — even briefly, even just to listen. The
+        community has been hosting this content non-stop for years to
+        keep the chain visible while the founder's own comms have been
+        tone-deaf and short on any leadership posture. Showing
+        up to any of it would land as a major gesture for almost no cost.
+      </p>
+
+      <h4>How it could work</h4>
+      <ul>
+        <li>Unannounced drop-ins to existing community Spaces — no pre-agreed format, no script. Stay 10 minutes if that's all there is, leave when ready.</li>
+        <li>Rotate through different hosts so it doesn't look like favouritism.</li>
+        <li>Optional: appear at one in-person community event per year. The bar is low.</li>
+        <li>Doesn't require talking about the legal stuff at all — answering even basic chain questions would be enough.</li>
+      </ul>
+
+      <h4>Risks</h4>
+      <ul>
+        <li>Anything said live can be quoted and used against him later — needs counsel-sanity-checked talking points.</li>
+        <li>Picking favourites among community hosts can split the community.</li>
+        <li>Setting a cadence creates an expectation that must then be met.</li>
+      </ul>
+    </div>
+
+    <!-- ============ OPTION 13 — RE-SYNC WITH CHAIN REALITY ============ -->
+    <div id="opt-resync" class="paper option">
+      <span class="tape tl"></span>
+      <div class="option-header">
+        <span class="option-num">OPTION 13</span>
+        <h3 class="option-title">Re-sync <em>the community</em> with the current vision</h3>
+      </div>
+      <h4>Why it matters</h4>
+      <p>
+      Most of the gap between founder posture and community sentiment is
+      not malice — it is information lag. Years of personal-account
+      posting that doesn't engage with where the chain actually is, in a
+      fast-moving
+      chain produce a real distance from ground truth. Closing that
+      distance costs nothing, takes less than half a working day per
+      month, and quietly fixes the root-cause version of "out of touch".
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value"><span class="tilde">~</span>2–4 hours / month, ongoing</span></div>
+        <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value"><span class="tilde">~</span>$0</span></div>
+        <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill low">LOW</span></span></div>
+        <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill high">HIGH</span></span></div>
+      </div>
+
+      <p>
+        Crypto's dynamic nature means metas, infrastructure, and
+        the dominant voices all turn over fast. After a long stretch of
+        period without leadership-level communication, the
+        community does not have understanding of the founder's updated
+        vision &amp; consistent talking points to reflect it.
+        <strong>Community members who still believe in the founder's
+        prior philosophy strongly believe there is hypocrisy from the
+        founder because they do not have access to the reasoning of his
+        potential updated thinking and "world view".</strong>
+      </p>
+      <p>
+        None of this is fatal. All of it is fixable by spending a small
+        amount of time updating the community with new reasoning and
+        framing.
+      </p>
+
+      <h4>How it could work</h4>
+      <ul>
+        <li>A single plain-English post or short video laying out the current world view: what changed, why, what hasn't.</li>
+        <li>A reusable set of consistent talking points the community can quote, share, and rally around.</li>
+        <li>Address the "hypocrisy" perception head-on — name the specific shifts and the reasoning behind them.</li>
+        <li>Refresh the framing on a regular cadence so it doesn't go stale again.</li>
+        <li>A single trusted community contact whose role is to flag <em>"this is what's actually happening on the ground"</em> on a regular cadence — non-optional, the feedback loop only works in both directions.</li>
+      </ul>
+
+      <h4>Risks</h4>
+      <ul>
+        <li>Updated framing exposes prior contradictions if not addressed honestly.</li>
+        <li>Inconsistent talking points across channels do more damage than silence.</li>
+        <li>The trusted community contact becomes a target — needs cover, not exposure.</li>
+      </ul>
+    </div>
+
+    <!-- ============ OPTION 14 — BRIDGE ETH IN ============ -->
+    <div id="opt-bridge" class="paper option">
+      <span class="tape tr"></span>
+      <div class="option-header">
+        <span class="option-num">OPTION 14</span>
+        <h3 class="option-title">Bridge a chunk of <em>ETH onto the chain</em></h3>
+      </div>
+      <h4>Why it matters</h4>
+      <p>
+        Cheapest, most reversible, most legible signal that the person
+        closest to the chain still believes in it. Almost every other
+        item on this list is louder; none are this easy.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value">an afternoon</span></div>
+        <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value">$5M–$50M moved (recoverable)</span></div>
+        <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill low">LOW</span></span></div>
+        <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill high">HIGH</span></span></div>
+      </div>
+
+      <p>
+        Move a meaningful slug of ETH across the bridge. Funds don't have
+        to be deployed — the act of moving them is the signal.
+      </p>
+
+      <ol style="margin: 8px 0 8px 24px;">
+        <li><strong>Confidence in the bridge.</strong> Using it at size shows the person closest to the chain trusts it (see CRYPTO 103 on the report card).</li>
+        <li><strong>Confidence in the chain.</strong> ETH-in is the most legible "I am still here" signal in crypto.</li>
+        <li><strong>Removes the front-runner's free option.</strong> Once capital is already on-chain, the market has to position assuming a move could come tomorrow — continuous pressure replaces event-driven scrambling.</li>
+        <li><strong>Stress-tests the bridge</strong> before bigger moves (Options 03 / 04 / 05 / 06) rely on it.</li>
+      </ol>
+
+      <h4>How it could work</h4>
+      <ul>
+        <li>Move in tranches over a week or two — "ongoing accumulation," not single dramatic move.</li>
+        <li>Custody in a transparent on-chain address; visibility is the point.</li>
+        <li>Optional: pre-announce the policy without announcing timing.</li>
+      </ul>
+
+      <h4>Risks</h4>
+      <ul>
+        <li>Bridge stalling under load is worse than not trying — fix plumbing in parallel.</li>
+        <li>Source-of-funds optics — "founder backing chain" vs "treasury hedging." Pick framing deliberately.</li>
+        <li>One-off with no follow-up reads as PR stunt.</li>
+      </ul>
+    </div>
+
+    <!-- ============ OPTION 15 — UPDATES TO PULSEX ============ -->
+    <div id="opt-pulsex" class="paper option">
+      <span class="tape tl"></span>
+      <div class="option-header">
+        <span class="option-num">OPTION 15</span>
+        <h3 class="option-title">Updates to <em>PulseX</em></h3>
+      </div>
+      <h4>Why it matters</h4>
+      <p>
+        PulseX is the front door of the chain — for a huge share of holders
+        it <em>is</em> the chain. Small product polish there compounds into
+        outsized perception gains, because every visitor sees it. The
+        community has shipped half a dozen alternative front-ends and
+        aggregators (9mm, 9inch, Piteas) precisely because the official one
+        has been left to drift. Closing that gap is cheap, and most of the
+        groundwork has already been done by others.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value">days to weeks per item</span></div>
+        <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value"><span class="tilde">~</span>$0 — dev time only</span></div>
+        <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill low">LOW</span></span></div>
+        <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill medium">MEDIUM</span></span></div>
+      </div>
+
+      <h4>Suggested items</h4>
+      <ul>
+        <li>
+          <strong>Show correct token logos</strong> for memecoins and other
+          long-tail tokens. Right now most non-blue-chip tokens render as a
+          blank circle or a question mark, which makes the DEX look dead and
+          the tokens look fake. Piteas already maintains a public token-logo
+          list on GitHub for exactly this purpose — pulling from it (or
+          mirroring it) is a half-day job and instantly makes the whole
+          token surface of PulseX feel alive.
+        </li>
+      </ul>
+
+      <h4>Risks</h4>
+      <ul>
+        <li>Logo lists need light moderation — scam tokens trying to impersonate real ones via logo will try to slip in. Piteas already filters for this; piggybacking on their list inherits that filter.</li>
+        <li>Any visible refresh of the official front-end raises expectations that more polish is coming — set the cadence accordingly.</li>
+      </ul>
+    </div>
+
+    <!-- ============ PAIR C — BLOCK EXPLORER ============ -->
+    <div class="pair-wrap">
+      <span class="pair-label">Two ways to give the chain a working block explorer · pick one</span>
+      <div class="pair-row">
+
+        <!-- OPTION 16 — FIX -->
+        <div id="opt-explorer-fix" class="paper option">
+          <span class="tape tl"></span>
+          <div class="option-header">
+            <span class="option-num">OPTION 16</span>
+            <h3 class="option-title">Fix <em>the main block explorer</em></h3>
+          </div>
+
+          <h4>Why it matters</h4>
+          <p>
+            The explorer is the most-linked piece of chain infra. When core
+            tabs are broken, every block-link shared makes the chain look
+            half-finished.
+          </p>
+
+          <div class="meta-grid">
+            <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value">weeks of focused dev</span></div>
+            <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value"><span class="tilde">~</span>$0 — dev time only</span></div>
+            <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill low">LOW</span></span></div>
+            <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill medium">MEDIUM</span></span></div>
+          </div>
+
+          <p>
+            The official BlockScout explorer at scan.pulsechain.com has a
+            recurring list of issues — some episodic (tied to RPC resyncs
+            / indexer rebuilds), some across releases. None are deep
+            architectural problems.
+          </p>
+
+          <h4>Items the community keeps reporting</h4>
+          <ul>
+            <li><strong>"Token transfers" tab</strong> — incomplete or stale, especially for active addresses and new tokens.</li>
+            <li><strong>"Holders" tab</strong> — wrong counts, balances don't reconcile, rankings drift. Most-cited trust killer.</li>
+            <li><strong>Token metadata</strong> — missing logos, names, decimals; verified markers inconsistent.</li>
+            <li><strong>Contract verification</strong> — slow, brittle, silent failures on common compiler configs.</li>
+            <li><strong>Internal transactions</strong> — missing on contract-heavy txs.</li>
+            <li><strong>Search</strong> — fails on common tokens by name/symbol; stale results.</li>
+            <li><strong>API reliability</strong> — rate limits, 5xxs, patchy docs.</li>
+            <li><strong>Sync / indexer lag</strong> — balances drift from on-chain reality during/after resyncs.</li>
+            <li><strong>Pagination</strong> — paging back through long-lived addresses errors out.</li>
+          </ul>
+
+          <h4>How it could work</h4>
+          <ul>
+            <li>Fund one or two senior engineers to burn down this list in public, with a tracked issue tracker.</li>
+            <li>Publish a status page showing what's broken and ETAs.</li>
+            <li>Integrate the Option 15 token-logo list.</li>
+          </ul>
+
+          <h4>Risks</h4>
+          <ul>
+            <li>Surface fixes without addressing the indexer means bugs return.</li>
+            <li>Upstream fork divergence — every fix may have to be re-done.</li>
+          </ul>
+        </div>
+
+        <!-- OPTION 17 — COLLAB -->
+        <div id="opt-explorer-collab" class="paper option">
+          <span class="tape tr"></span>
+          <div class="option-header">
+            <span class="option-num">OPTION 17</span>
+            <h3 class="option-title">Collab with a <em>community team</em> running a more accurate explorer</h3>
+          </div>
+
+          <h4>Why it matters</h4>
+          <p>
+            Multiple community teams have already built explorers that, on
+            most of the items in Option 16, are simply more accurate than
+            the official one. Endorsing one of them — or commissioning the
+            best of them as a co-official front-end — gets the chain a
+            working explorer almost instantly, at a fraction of the cost
+            and time of the in-house fix path.
+          </p>
+
+          <div class="meta-grid">
+            <div class="meta-cell"><span class="meta-label">Time</span><span class="meta-value">days to weeks</span></div>
+            <div class="meta-cell"><span class="meta-label">Capital</span><span class="meta-value"><span class="tilde">~</span>$0–$500k grant / retainer</span></div>
+            <div class="meta-cell"><span class="meta-label">Risk</span><span class="meta-value"><span class="pill low">LOW</span></span></div>
+            <div class="meta-cell"><span class="meta-label">Upside</span><span class="meta-value"><span class="pill medium">MEDIUM</span></span></div>
+          </div>
+
+          <p>
+            Rather than rebuild what already exists, formalise a relationship
+            with whichever community-built explorer is currently most
+            accurate on token transfers, holders, and contract metadata.
+            Promote it from official channels, link to it from the chain's
+            own docs, and optionally fund it on a small retainer so the
+            team can keep up with usage.
+          </p>
+
+          <h4>How it could work</h4>
+          <ul>
+            <li>Run a short, public bake-off: same tokens / addresses / blocks queried across all candidate explorers, results scored on accuracy, completeness, and uptime.</li>
+            <li>Endorse the winner from official channels (X account, docs, wallet integrations) — that single act of distribution is usually worth more than money.</li>
+            <li>Optional: a modest grant or retainer (months, not millions) to formalise the relationship and ensure the team can scale with the traffic that will follow the endorsement.</li>
+            <li>No exclusivity — leave the official explorer running in parallel so neither side is single-point-of-failure.</li>
+          </ul>
+
+          <h4>Risks</h4>
+          <ul>
+            <li>Endorsing one community team risks alienating the others — the bake-off has to be visibly fair, and the door has to stay open to the runners-up.</li>
+            <li>A community team's bus factor is usually low; without a retainer or hand-off plan, a single burned-out maintainer can take the explorer offline.</li>
+            <li>Making a community explorer the de-facto canonical surface raises the bar on its uptime and accuracy — the team needs to know that's coming.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============ DISCLAIMER ============ -->
+    <div class="paper disclaimer-card">
+      <h3>Disclaimer / Framing</h3>
+      <p>
+        These options were assembled by community members — the same
+        community that has, for years, kept the chain alive through its
+        own unpaid labour. The ask is not for sympathy or money. The ask
+        is for any of the items above to actually happen.
+      </p>
+      <p>
+        Cost and timeline figures are rough
+        public-information estimates, not quotes. The page exists to make
+        the ask concrete: there are real levers available, none of them
+        are being pulled. Some of these have effectively no risk and no
+        negative side effects, so they should be &ldquo;no-brainers&rdquo;.
+      </p>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <div class="footer">
+      Built by the community · No affiliation with Richard Heart or PulseChain dev team.
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Richard Heart Report Card — PulseChain Founder Performance</title>
+  <meta name="description" content="A community-built, fact-based report card grading what Richard Heart has actually done to support the PulseChain ecosystem he founded." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📑</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Patrick+Hand&family=Permanent+Marker&family=Schoolbell&family=Special+Elite&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --desk: #6a4a2a;
+      --desk-dark: #4a3220;
+      --paper: #fbf3d9;
+      --paper-shadow: rgba(60, 40, 10, 0.35);
+      --rule-blue: #8eb4dc;
+      --margin-red: #e8a3a8;
+      --ink-red: #c41e2a;
+      --ink-red-dark: #962020;
+      --ink-blue: #2c4f9a;
+      --pencil: #2a2622;
+      --pencil-dim: #6b6258;
+      --gold: #f4c430;
+      --tape: rgba(244, 232, 180, 0.7);
+      --stamp: #b81b22;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background:
+        radial-gradient(ellipse at top, rgba(0,0,0,0.15), transparent 60%),
+        repeating-linear-gradient(
+          92deg,
+          var(--desk) 0 60px,
+          var(--desk-dark) 60px 62px,
+          var(--desk) 62px 140px
+        );
+      background-attachment: fixed;
+      color: var(--pencil);
+      font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
+      font-size: 19px;
+      line-height: 1.55;
+      min-height: 100vh;
+      padding: 40px 16px 80px;
+    }
+
+    /* subtle paper grain everywhere */
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.65;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ---------- PAPER CARD BASE ---------- */
+    .paper {
+      position: relative;
+      background: var(--paper);
+      background-image:
+        radial-gradient(ellipse at 20% 10%, rgba(120, 80, 30, 0.06), transparent 60%),
+        radial-gradient(ellipse at 80% 90%, rgba(120, 80, 30, 0.07), transparent 60%);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.4) inset,
+        0 18px 36px var(--paper-shadow),
+        0 6px 14px rgba(0,0,0,0.25);
+      border-radius: 3px;
+      padding: 56px 56px 64px;
+    }
+
+    .paper::after {
+      content: "";
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='1' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.4  0 0 0 0 0.25  0 0 0 0 0.05  0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23p)'/></svg>");
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      border-radius: 3px;
+    }
+
+    /* lined-notebook variant */
+    .lined {
+      background:
+        linear-gradient(transparent 0 33px, var(--rule-blue) 33px 34px, transparent 34px) 0 0 / 100% 34px,
+        var(--paper);
+      padding: 12px 28px 28px 70px;
+      border-radius: 2px;
+      position: relative;
+    }
+    .lined::before {
+      content: "";
+      position: absolute;
+      left: 50px; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--margin-red);
+    }
+
+    /* tape strips */
+    .tape {
+      position: absolute;
+      width: 90px; height: 26px;
+      background: var(--tape);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      border-left: 1px dashed rgba(0,0,0,0.05);
+      border-right: 1px dashed rgba(0,0,0,0.05);
+      transform: rotate(-4deg);
+    }
+    .tape.tl { top: -10px; left: 30px; transform: rotate(-6deg); }
+    .tape.tr { top: -12px; right: 40px; transform: rotate(5deg); }
+    .tape.bl { bottom: -10px; left: 60px; transform: rotate(3deg); }
+    .tape.br { bottom: -10px; right: 70px; transform: rotate(-7deg); }
+
+    /* hole-punches for binder vibe */
+    .holes { position: absolute; left: 18px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: space-around; padding: 50px 0; }
+    .holes .hole {
+      width: 18px; height: 18px;
+      background: var(--desk-dark);
+      border-radius: 50%;
+      box-shadow: inset 0 2px 3px rgba(0,0,0,0.7);
+    }
+
+    /* ---------- HEADER / COVER ---------- */
+    .cover {
+      margin-bottom: 36px;
+      padding: 40px 56px 48px;
+      transform: rotate(-0.4deg);
+    }
+    .cover-stamp {
+      position: absolute;
+      top: 22px; right: -12px;
+      font-family: 'Permanent Marker', cursive;
+      color: var(--stamp);
+      border: 4px double var(--stamp);
+      padding: 6px 18px 4px;
+      transform: rotate(8deg);
+      letter-spacing: 1px;
+      font-size: 14px;
+      opacity: 0.85;
+      background: rgba(255,255,255,0.4);
+    }
+    .cover-eyebrow {
+      font-family: 'Special Elite', monospace;
+      font-size: 13px;
+      letter-spacing: 4px;
+      color: var(--pencil-dim);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .cover h1 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      font-weight: 700;
+      color: var(--ink-red);
+      line-height: 0.95;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    .cover h1 .underline {
+      display: inline-block;
+      border-bottom: 3px wavy var(--ink-red);
+      padding-bottom: 2px;
+    }
+    .cover-sub {
+      font-family: 'Caveat', cursive;
+      font-size: 1.5rem;
+      color: var(--ink-blue);
+      margin-bottom: 28px;
+    }
+
+    .cover-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 28px;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--pencil-dim);
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.1rem;
+    }
+    .cover-meta .label {
+      color: var(--pencil-dim);
+      font-family: 'Special Elite', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .cover-meta .value {
+      color: var(--ink-blue);
+      border-bottom: 1px solid var(--pencil-dim);
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+    .cover-meta .value.scribble { color: var(--ink-red); font-family: 'Caveat', cursive; font-size: 1.4rem; }
+
+    /* grading scale */
+    .scale {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--pencil-dim);
+    }
+    .scale span {
+      border: 1px solid var(--pencil-dim);
+      padding: 4px 10px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 2px;
+    }
+    .scale b { color: var(--ink-red); font-family: 'Permanent Marker'; margin-right: 6px; }
+    .scale .scale-break {
+      flex-basis: 100%;
+      height: 0;
+      padding: 0;
+      border: none;
+      background: none;
+    }
+
+    /* minimal overall grade in cover top-right */
+    .cover-overall {
+      position: absolute;
+      top: 40px;
+      right: 36px;
+      text-align: center;
+      transform: rotate(-3deg);
+      z-index: 3;
+    }
+    .cover-overall-label {
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--pencil-dim);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .cover-overall-letter {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 7rem;
+      line-height: 0.95;
+      color: var(--ink-red);
+      letter-spacing: -2px;
+    }
+
+    /* ---------- INTRO / TEACHER NOTES ---------- */
+    .intro {
+      margin-bottom: 50px;
+      transform: rotate(0.3deg);
+    }
+    .intro h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.4rem;
+      color: var(--ink-red);
+      margin-bottom: 6px;
+    }
+    .intro .stamp-note {
+      font-family: 'Permanent Marker', cursive;
+      color: var(--ink-red);
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transform: rotate(-2deg);
+      display: inline-block;
+      border: 2px solid var(--ink-red);
+      padding: 3px 12px;
+      margin-bottom: 22px;
+      opacity: 0.85;
+    }
+    .intro p {
+      margin-bottom: 14px;
+      font-size: 1.1rem;
+    }
+    .intro ol {
+      margin: 18px 0 18px 26px;
+    }
+    .intro ol li {
+      margin-bottom: 14px;
+      padding-left: 8px;
+    }
+    .intro ol li::marker {
+      color: var(--ink-red);
+      font-weight: bold;
+    }
+    .intro .signoff {
+      margin-top: 30px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      color: var(--ink-blue);
+      text-align: right;
+      transform: rotate(-2deg);
+    }
+    .intro .signoff small {
+      display: block;
+      font-family: 'Special Elite', monospace;
+      font-size: 0.7rem;
+      color: var(--pencil-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+      transform: rotate(2deg);
+    }
+    .highlight {
+      background: linear-gradient(transparent 55%, #fff39a 55% 92%, transparent 92%);
+      padding: 0 2px;
+    }
+    .strike {
+      text-decoration: line-through;
+      text-decoration-color: var(--ink-red);
+      text-decoration-thickness: 2px;
+      color: var(--pencil-dim);
+    }
+
+    /* ---------- SUBJECT CARD ---------- */
+    .subject {
+      margin-bottom: 50px;
+      padding: 50px 48px 56px;
+      transform: rotate(-0.3deg);
+      scroll-margin-top: 24px;
+    }
+
+    .jumpto {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--pencil-dim);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      align-items: baseline;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.05rem;
+    }
+    .jumpto-label {
+      font-family: 'Special Elite', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--pencil-dim);
+    }
+    .jumpto a {
+      color: var(--ink-blue);
+      text-decoration: none;
+      border-bottom: 1px solid var(--pencil-dim);
+      padding-bottom: 1px;
+    }
+    .jumpto a:hover {
+      color: var(--ink-red);
+      border-bottom-color: var(--ink-red);
+    }
+    .subject-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 2px dashed var(--pencil-dim);
+      padding-bottom: 14px;
+      margin-bottom: 28px;
+    }
+    .num-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    .copy-link {
+      background: transparent;
+      border: 1px dashed var(--pencil-dim);
+      color: var(--pencil-dim);
+      font-family: 'Special Elite', monospace;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 1px 6px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .copy-link:hover {
+      color: var(--ink-blue);
+      border-color: var(--ink-blue);
+    }
+    .copy-link.copied {
+      color: var(--ink-red);
+      border-color: var(--ink-red);
+    }
+    .subject-header .num {
+      font-family: 'Permanent Marker', cursive;
+      color: var(--ink-red);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+    .subject-header h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.6rem;
+      color: var(--pencil);
+      flex: 1;
+      margin: 0 12px;
+    }
+    .subject-header h3 em {
+      font-style: normal;
+      color: var(--ink-blue);
+    }
+    .subject-header .tag {
+      font-family: 'Special Elite', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--pencil-dim);
+      border: 1px solid var(--pencil-dim);
+      padding: 4px 10px;
+      text-transform: uppercase;
+    }
+
+    /* desire block */
+    .desire {
+      margin-bottom: 30px;
+    }
+    .desire .label, .panel .label, .speculation .label {
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--ink-red);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: inline-block;
+      border-bottom: 2px solid var(--ink-red);
+      padding-bottom: 2px;
+    }
+    .desire .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.7rem;
+      color: var(--ink-blue);
+      line-height: 1.25;
+      padding: 4px 0 4px 20px;
+      border-left: 4px solid var(--ink-blue);
+      margin-bottom: 14px;
+    }
+    .desire ul, .speculation ul {
+      list-style: none;
+      padding: 0;
+    }
+    .desire ul li, .speculation ul li {
+      padding: 6px 0 6px 30px;
+      position: relative;
+    }
+    .desire ul li::before {
+      content: "✏️";
+      position: absolute; left: 0; top: 4px;
+      font-size: 14px;
+    }
+    .speculation ul li::before {
+      content: "💭";
+      position: absolute; left: 0; top: 4px;
+      font-size: 14px;
+    }
+
+    /* cost-benefit two-column */
+    .cb {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+    .panel {
+      background: rgba(255,255,255,0.55);
+      border: 2px solid var(--pencil);
+      padding: 18px 20px 22px;
+      position: relative;
+      box-shadow: 3px 3px 0 var(--pencil);
+    }
+    .panel.pros { border-color: #2a7d3a; box-shadow: 3px 3px 0 #2a7d3a; transform: rotate(-0.6deg); }
+    .panel.pros .label { color: #2a7d3a; border-color: #2a7d3a; }
+    .panel.cons { border-color: var(--ink-red); box-shadow: 3px 3px 0 var(--ink-red); transform: rotate(0.7deg); }
+    .panel.cons .label { color: var(--ink-red); border-color: var(--ink-red); }
+    .panel ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 6px;
+    }
+    .panel ul li {
+      padding: 4px 0 4px 26px;
+      position: relative;
+      font-size: 1.05rem;
+    }
+    .panel.pros ul li::before { content: "✓"; color: #2a7d3a; font-weight: bold; position: absolute; left: 4px; top: 2px; font-size: 1.2rem; }
+    .panel.cons ul li::before { content: "✗"; color: var(--ink-red); font-weight: bold; position: absolute; left: 4px; top: 2px; font-size: 1.2rem; }
+
+    /* speculation */
+    .speculation {
+      margin-bottom: 36px;
+      background:
+        linear-gradient(transparent 0 30px, var(--rule-blue) 30px 31px, transparent 31px) 0 0 / 100% 31px,
+        #fff7c8;
+      padding: 18px 22px 26px;
+      border: 1px dashed var(--pencil-dim);
+      transform: rotate(-0.5deg);
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+      position: relative;
+    }
+    .speculation::before {
+      content: "POST-IT";
+      position: absolute;
+      top: -8px; left: 18px;
+      font-family: 'Special Elite', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      background: var(--paper);
+      padding: 0 6px;
+      color: var(--pencil-dim);
+    }
+    .speculation .disclaimer {
+      font-family: 'Special Elite', monospace;
+      font-size: 11px;
+      color: var(--pencil-dim);
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--pencil-dim);
+      letter-spacing: 0.5px;
+    }
+
+    /* GRADE BOX */
+    .grade {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 28px;
+      align-items: center;
+      margin-top: 8px;
+      padding: 28px 26px;
+      background: rgba(255,255,255,0.45);
+      border: 3px solid var(--pencil);
+      box-shadow: 5px 6px 0 var(--ink-red);
+      position: relative;
+    }
+    .grade-stamp {
+      position: relative;
+      text-align: center;
+      transform: rotate(-9deg);
+    }
+    .grade-stamp .letter {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 9rem;
+      line-height: 1;
+      color: var(--stamp);
+      text-shadow:
+        2px 0 var(--stamp), -2px 0 var(--stamp),
+        0 2px var(--stamp), 0 -2px var(--stamp),
+        4px 4px 0 rgba(184, 27, 34, 0.18);
+      letter-spacing: -8px;
+    }
+    .grade-stamp .ring {
+      position: absolute;
+      inset: -6px;
+      border: 6px solid var(--stamp);
+      border-radius: 8px;
+      opacity: 0.65;
+      transform: rotate(2deg);
+    }
+    .grade-stamp .ring::before {
+      content: "";
+      position: absolute; inset: 4px;
+      border: 2px solid var(--stamp);
+      border-radius: 4px;
+      opacity: 0.7;
+    }
+    .grade-stamp .stamp-text {
+      font-family: 'Special Elite', monospace;
+      font-size: 11px;
+      color: var(--stamp);
+      letter-spacing: 3px;
+      margin-top: 6px;
+    }
+
+    .grade-comments .label {
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--pencil-dim);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .grade-comments p {
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      color: var(--ink-red);
+      line-height: 1.3;
+    }
+    .grade-comments p strong {
+      color: var(--ink-red-dark);
+    }
+
+    /* closing card */
+    .closing {
+      margin-bottom: 50px;
+      padding: 44px 48px 48px;
+      text-align: center;
+    }
+    .closing-eyebrow {
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: var(--pencil-dim);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .closing-title {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--ink-red);
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+    .closing-body {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.15rem;
+      max-width: 620px;
+      margin: 0 auto 14px;
+      color: var(--pencil);
+    }
+    .closing-cta-wrap { margin-top: 28px; }
+    .closing-cta {
+      display: inline-block;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      color: var(--ink-red);
+      border: 3px solid var(--ink-red);
+      padding: 12px 26px 10px;
+      background: rgba(255, 255, 255, 0.45);
+      text-decoration: none;
+      transform: rotate(-1.2deg);
+      transition: transform 0.15s, background 0.15s;
+    }
+    .closing-cta:hover {
+      transform: rotate(0.4deg) scale(1.02);
+      background: rgba(255, 243, 154, 0.7);
+    }
+
+    /* footer */
+    .footer {
+      margin-top: 60px;
+      text-align: center;
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      color: var(--paper);
+      letter-spacing: 2px;
+      opacity: 0.85;
+      line-height: 1.7;
+    }
+    .footer a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold); }
+    .footer a:hover { color: #fff; border-color: #fff; }
+
+    /* gold star accent */
+    .star {
+      display: inline-block;
+      color: var(--gold);
+      filter: drop-shadow(0 1px 0 #b88a00);
+    }
+
+    /* responsive */
+    @media (max-width: 720px) {
+      body { padding: 20px 8px 60px; font-size: 17px; }
+      .paper { padding: 36px 24px 44px; }
+      .cover { padding: 30px 24px 36px; }
+      .subject { padding: 36px 22px 40px; }
+      .cover h1 { font-size: 2.4rem; }
+      .cover-overall { position: static; margin: 18px 0 8px; transform: rotate(-2deg); }
+      .cover-overall-letter { font-size: 5rem; }
+      .cover-meta { grid-template-columns: 1fr; }
+      .cb { grid-template-columns: 1fr; }
+      .grade { grid-template-columns: 1fr; gap: 14px; text-align: center; }
+      .grade-stamp { margin: 0 auto; }
+      .grade-stamp .letter { font-size: 7rem; }
+      .subject-header h3 { font-size: 2rem; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ============ COVER ============ -->
+    <div class="paper cover">
+      <span class="tape tl"></span>
+      <span class="tape tr"></span>
+
+      <div class="cover-overall">
+        <div class="cover-overall-label">Overall Grade</div>
+        <div class="cover-overall-letter">D−</div>
+      </div>
+
+      <div class="cover-eyebrow">Official Founder Performance Review</div>
+      <h1>The <span class="underline">Richard Heart</span><br />Report Card</h1>
+      <div class="cover-sub">A grade-by-grade look at what the founder<br />has actually done for his own chain.</div>
+
+      <div class="cover-meta">
+        <div>
+          <div class="label">Student</div>
+          <div class="value scribble">Richard Heart</div>
+        </div>
+        <div>
+          <div class="label">Class</div>
+          <div class="value">Founder 101 — PulseChain</div>
+        </div>
+        <div>
+          <div class="label">Term</div>
+          <div class="value">May 2023 → Present</div>
+        </div>
+        <div>
+          <div class="label">Graded By</div>
+          <div class="value">The PulseChain Community</div>
+        </div>
+      </div>
+
+      <div class="scale">
+        <span><b>A</b> Above and beyond</span>
+        <span><b>B</b> Solid effort</span>
+        <span><b>C</b> Bare minimum</span>
+        <span class="scale-break"></span>
+        <span><b>D</b> Tone-deaf / no leadership</span>
+        <span><b>F</b> Working against it</span>
+      </div>
+
+    </div>
+
+    <!-- ============ INTRO / TEACHER'S NOTES ============ -->
+    <div class="paper lined intro">
+      <span class="tape tl"></span>
+      <h2>Read this first.</h2>
+      <div class="stamp-note">NOT A LIST OF EXPECTATIONS</div>
+
+      <p>
+        Before anyone reaches for the keyboard: <span class="highlight">no one is owed anything by Richard Heart.</span>
+        He isn't required to bridge tokens, court exchanges, fund builders, post a chart, or
+        even open Twitter in the morning. We are not pretending otherwise.
+      </p>
+
+      <p>
+        This card is not a demand letter. It is a <strong>performance review of what has, and has not, happened</strong>
+        in the years since the chain went live — measured against the only fair benchmark available:
+        <em>what a founder who cares about the chain that they themselves created would reasonably be doing for it.</em>
+      </p>
+
+      <ol>
+        <li>Every grade is based on <strong>observable, public action</strong> — on-chain data, recorded statements, public moves.<br />No mind-reading, no leaks, no rumors treated as fact.</li>
+        <li>Where motive is unclear, we put it under <strong>Community Speculation</strong> and label it as such.<br />Speculation is never used to set the grade.</li>
+        <li>If a grade is wrong, the reply is <strong>data, not feelings</strong>. <span class="strike">Crying in the casino won't move a single letter.</span><br />Show a different fact and the page updates.</li>
+        <li>Richard has no involvement here. This is fan-built.<br />Don't shoot the messenger — we paid attention because we hold a bag and care about the chain.</li>
+      </ol>
+
+      <p>
+        If you want a puff piece, there are plenty of YouTube channels for that.
+        If you want a fan-fiction takedown, there's an entire subreddit. <span class="highlight">This is neither.</span>
+        It's a report card. It will be graded fairly. And it will be updated as facts change.
+      </p>
+
+      <div class="signoff">
+        — yours in tough love,<br />
+        the PulseChain Community
+        <small>(the people who actually showed up)</small>
+      </div>
+
+      <nav class="jumpto" aria-label="Jump to scorecard">
+        <span class="jumpto-label">Jump to:</span>
+        <a href="#crypto-106">106 · DeFi &amp; Cypherpunk Principles</a>
+        <a href="#crypto-101">101 · Price Chart</a>
+        <a href="#crypto-102">102 · Live Streams</a>
+        <a href="#crypto-103">103 · Block Explorer &amp; Infra</a>
+        <a href="#crypto-104">104 · CEX Listings</a>
+        <a href="#crypto-105">105 · Staying Current</a>
+        <a href="#crypto-107">107 · Keeping the Community Current</a>
+      </nav>
+    </div>
+
+    <!-- ============ CRYPTO 106 — DEFI & CYPHERPUNK PRINCIPLES ============ -->
+    <div id="crypto-106" class="paper subject" style="transform: rotate(0.35deg);">
+      <span class="tape tl"></span>
+      <span class="tape br"></span>
+
+      <div class="subject-header">
+        <div class="num-wrap">
+          <span class="num">CRYPTO 106</span>
+          <button class="copy-link" type="button" data-anchor="crypto-106">copy link</button>
+        </div>
+        <h3>DeFi<br />&amp; <em>Cypherpunk Principles</em></h3>
+        <span class="tag">no VCs · self-custody · sovereignty</span>
+      </div>
+
+      <div class="desire">
+        <span class="label">Community Desire</span>
+        <div class="quote">
+          "Keep the chain a place that is genuinely free of VCs, middlemen, and permissioned gatekeepers — and keep extending that posture rather than letting it drift."
+        </div>
+        <ul>
+          <li>The chain was sold on a strong DeFi / sovereign-money / anti-establishment narrative — and that narrative is what the original holders sacrificed for.</li>
+          <li>It has, to its credit, stayed VC-free, KYC-free at the protocol level, and entirely permissionless to use. That is rarer than it sounds in 2026.</li>
+          <li>The room for further upside is in privacy primitives, more decentralized infra, and self-custody-first defaults — extending what is already there rather than replacing it.</li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="label" style="display:block; margin-bottom: 10px;">Cost / Benefit Analysis</span>
+        <div class="cb">
+          <div class="panel pros">
+            <span class="label">What is genuinely working</span>
+            <ul>
+              <li>Sacrifice model — no VCs, no founder allocations sold under the table</li>
+              <li>Permissionless mainnet, KYC-free at the protocol layer</li>
+              <li>Open-source EVM stack, forks welcome</li>
+              <li>Self-custody is the default, not the exception</li>
+            </ul>
+          </div>
+          <div class="panel cons">
+            <span class="label">Where there is still room</span>
+            <ul>
+              <li>Load-bearing infra (RPCs, bridge, explorer) is more concentrated than the rhetoric implies</li>
+              <li>No native privacy primitives shipped on top of the EVM base</li>
+              <li>Real structural decentralization (governance, funding, ops) is still mostly aspirational</li>
+              <li>Cypherpunk credibility is preserved by repeated action, not earned once</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="speculation">
+        <span class="label">Community Speculation</span>
+        <ul>
+          <li>The "no VCs" stance is a genuine line in the sand — that is why it has held.</li>
+          <li>Where the chain is permissioned, it is more by neglect than by design.</li>
+          <li>Privacy primitives are low priority not because they are unwanted, but because they don't move price this quarter.</li>
+          <li>The cypherpunk pitch is one of the few defensible moats this chain has against the next VC L1.</li>
+        </ul>
+        <div class="disclaimer">
+          ↑ Speculation only. None of this is used to set the grade.
+          The grade is set by what has, and has not, happened.
+        </div>
+      </div>
+
+      <div class="grade">
+        <div class="grade-stamp">
+          <div class="ring"></div>
+          <div class="letter">B+</div>
+          <div class="stamp-text">★ ISSUED ★</div>
+        </div>
+        <div class="grade-comments">
+          <div class="label">Teacher's Comments</div>
+          <p>
+            <strong>Credit where it is due — this is the subject the chain
+            actually carries.</strong>
+            No VCs, sacrifice-funded, permissionless, open-source,
+            self-custody-first. In a 2026 landscape full of polished
+            VC-aligned L1s, that posture is genuinely differentiated and
+            non-trivial to maintain. The remaining gap — privacy primitives,
+            structurally decentralised infra, real governance — is where a
+            B+ becomes an A.<br /><br />Worth defending fiercely; worth extending
+            deliberately.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CRYPTO 101 — THE PRICE CHART ============ -->
+    <div id="crypto-101" class="paper subject" style="transform: rotate(-0.4deg);">
+      <span class="tape tl"></span>
+      <span class="tape br"></span>
+
+      <div class="subject-header">
+        <div class="num-wrap">
+          <span class="num">CRYPTO 101</span>
+          <button class="copy-link" type="button" data-anchor="crypto-101">copy link</button>
+        </div>
+        <h3>The <em>Price Chart</em></h3>
+        <span class="tag">PLS · PLSX · HEX · eHEX · PRVX</span>
+      </div>
+
+      <div class="desire">
+        <span class="label">Community Desire</span>
+        <div class="quote">
+          "Stop letting the chart bleed forever. Do — or say — something that signals the founder still cares whether PLS goes up."
+        </div>
+        <ul>
+          <li>PLS is down ~95% from launch-sacrifice valuation. The chart is the chain's resume.</li>
+          <li>Every ecosystem economic — gas, grants, validator margin, builder pay — leans on PLS price.</li>
+          <li>No founder activity, no chart support, no narrative reset. The line just goes down.</li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="label" style="display:block; margin-bottom: 10px;">Cost / Benefit Analysis</span>
+        <div class="cb">
+          <div class="panel pros">
+            <span class="label">Upside of acting</span>
+            <ul>
+              <li>Restored confidence pulls capital back on-chain</li>
+              <li>Ends the "founder has abandoned ship" read</li>
+              <li>Validator + builder retention</li>
+              <li>Kills the doom-loop narrative pre-cycle</li>
+            </ul>
+          </div>
+          <div class="panel cons">
+            <span class="label">Cost of acting</span>
+            <ul>
+              <li>Any price-talk or promotion is what got him sued in the first place — every line is a fresh SEC exhibit</li>
+              <li>Buybacks cost real treasury</li>
+              <li>Holders might dump on his pumps</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="speculation">
+        <span class="label">Community Speculation</span>
+        <ul>
+          <li>True belief: you have to trust that RH is playing 5D chess.</li>
+          <li>He's still shaking out the weak hands. <em>(cope)</em></li>
+          <li>Re-engaging at all re-anchors the chain socially to one man.</li>
+        </ul>
+        <div class="disclaimer">
+          ↑ Speculation only. None of this is used to set the grade.
+          The grade is set by what has, and has not, happened.
+        </div>
+      </div>
+
+      <div class="grade">
+        <div class="grade-stamp">
+          <div class="ring"></div>
+          <div class="letter">F</div>
+          <div class="stamp-text">★ ISSUED ★</div>
+        </div>
+        <div class="grade-comments">
+          <div class="label">Teacher's Comments</div>
+          <p>
+            <strong>Two years of vertical down with no leadership posture from the founder.</strong>
+            Whatever the strategy is, it isn't working — and the playbook hasn't
+            adjusted once. The chart is the single biggest community-facing data
+            point on the chain, and it is being treated like someone else's problem.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CRYPTO 102 — LIVE STREAMS ============ -->
+    <div id="crypto-102" class="paper subject" style="transform: rotate(0.4deg);">
+      <span class="tape tr"></span>
+      <span class="tape bl"></span>
+
+      <div class="subject-header">
+        <div class="num-wrap">
+          <span class="num">CRYPTO 102</span>
+          <button class="copy-link" type="button" data-anchor="crypto-102">copy link</button>
+        </div>
+        <h3>The <em>Live Streams</em></h3>
+        <span class="tag">YouTube · TWITTER · Twitch</span>
+      </div>
+
+      <div class="desire">
+        <span class="label">Community Desire</span>
+        <div class="quote">
+          "Bring back the streams. or tell the community the reason why & the conditions required for them to start back up."
+        </div>
+        <ul>
+          <li>RH streams were the de-facto chain news service during launch year.</li>
+          <li>They educated, retained, and recruited holders better than any marketing budget could.</li>
+          <li>Cadence has collapsed from weekly streams to long gaps with only the occasional pre-recorded video — and personal-account posting that doesn't address the chain's situation</li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="label" style="display:block; margin-bottom: 10px;">Cost / Benefit Analysis</span>
+        <div class="cb">
+          <div class="panel pros">
+            <span class="label">Upside</span>
+            <ul>
+              <li>Free, unfiltered messaging direct to the holders</li>
+              <li>Strongest differentiator vs anonymous L1 founders</li>
+              <li>Recruiting + morale tool — no agency required</li>
+              <li>End the "ghost founder" vibe</li>
+            </ul>
+          </div>
+          <div class="panel cons">
+            <span class="label">Costs</span>
+            <ul>
+              <li>Time</li>
+              <li>Risk of exposing location</li>
+              <li>Exposure to direct community criticism</li>
+              <li>Every clip becomes a legal exhibit</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="speculation">
+        <span class="label">Community Speculation</span>
+        <ul>
+          <li>His ongoing legal situation is the reason he's gone dark on stream.</li>
+          <li>Genuine belief that the chain doesn't need a frontman anymore.</li>
+          <li>Streaming wouldn't move price anyway — you can't talk a market out of where it wants to go.</li>
+        </ul>
+        <div class="disclaimer">
+          ↑ Speculation only. None of this is used to set the grade.
+          The grade is set by what has, and has not, happened.
+        </div>
+      </div>
+
+      <div class="grade">
+        <div class="grade-stamp">
+          <div class="ring"></div>
+          <div class="letter">F</div>
+          <div class="stamp-text">★ ISSUED ★</div>
+        </div>
+        <div class="grade-comments">
+          <div class="label">Teacher's Comments</div>
+          <p>
+            <strong>The community's primary information channel has been switched off without replacement or explanation.</strong>
+            A 60-second post saying "I can't speak publicly while the case is open"
+            would be a 10x upgrade over the current tone-deaf cadence.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CRYPTO 103 — BLOCK EXPLORER & CRITICAL INFRA ============ -->
+    <div id="crypto-103" class="paper subject" style="transform: rotate(-0.5deg);">
+      <span class="tape tl"></span>
+      <span class="tape tr"></span>
+
+      <div class="subject-header">
+        <div class="num-wrap">
+          <span class="num">CRYPTO 103</span>
+          <button class="copy-link" type="button" data-anchor="crypto-103">copy link</button>
+        </div>
+        <h3>Block Explorer<br />&amp; <em>Critical Infra</em></h3>
+        <span class="tag">scan · RPC · bridge</span>
+      </div>
+
+      <div class="desire">
+        <span class="label">Community Desire</span>
+        <div class="quote">
+          "The chain's basic plumbing — explorer, public RPC, bridge — should just work. After two years, it still doesn't."
+        </div>
+        <ul>
+          <li>Block explorer outages and stale-data periods are chronic, not freak events.</li>
+          <li>The official explorer is, candidly, not fit for purpose &mdash; community-built explorers carry the load that the chain's flagship tool should be carrying.</li>
+          <li>The bridge has had multi-day silent outages with no public post-mortem.</li>
+          <li>Public RPCs are throttled and unreliable; any serious user self-hosts or pays a third party.</li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="label" style="display:block; margin-bottom: 10px;">Cost / Benefit Analysis</span>
+        <div class="cb">
+          <div class="panel pros">
+            <span class="label">Upside of fixing</span>
+            <ul>
+              <li>First impression doesn't break for new wallets</li>
+              <li>Bridge uptime = capital inflow uptime</li>
+              <li>Builders pick chains where the RPC doesn't lie</li>
+              <li>Cheap relative to almost any other founder spend</li>
+            </ul>
+          </div>
+          <div class="panel cons">
+            <span class="label">Downside / friction</span>
+            <ul>
+              <li>Ongoing ops cost — needs a team, not a one-off</li>
+              <li>Funding it from the founder pile invites "who controls the chain" optics</li>
+              <li>Third-party vendors (Gypsy Labs etc.) already partially fill the gap</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="speculation">
+        <span class="label">Community Speculation</span>
+        <ul>
+          <li>Original sacrifice runway is thinning; ops is the first thing cut.</li>
+          <li>No clear public owner of these services — accountability is diffuse on purpose.</li>
+          <li>Core team considers current uptime "fine for our usage."</li>
+          <li>The chain is genuinely on autopilot with no one driving infra.</li>
+        </ul>
+        <div class="disclaimer">
+          ↑ Speculation only. None of this is used to set the grade.
+          The grade is set by what has, and has not, happened.
+        </div>
+      </div>
+
+      <div class="grade">
+        <div class="grade-stamp">
+          <div class="ring"></div>
+          <div class="letter">D</div>
+          <div class="stamp-text">★ ISSUED ★</div>
+        </div>
+        <div class="grade-comments">
+          <div class="label">Teacher's Comments</div>
+          <p>
+            <strong>Two years in, the explorer still bricks under load.</strong>
+            For a chain whose entire pitch is "the cheapest gas in crypto," the
+            floor of basic functionality is not where it should be.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CRYPTO 104 — CEX LISTINGS ============ -->
+    <div id="crypto-104" class="paper subject" style="transform: rotate(0.3deg);">
+      <span class="tape tl"></span>
+      <span class="tape br"></span>
+
+      <div class="subject-header">
+        <div class="num-wrap">
+          <span class="num">CRYPTO 104</span>
+          <button class="copy-link" type="button" data-anchor="crypto-104">copy link</button>
+        </div>
+        <h3>Tier-1 <em>CEX Listings</em></h3>
+        <span class="tag">PLS · PLSX · HEX</span>
+      </div>
+
+      <div class="desire">
+        <span class="label">Community Desire</span>
+        <div class="quote">
+          "Get PLS, PLSX and HEX listed on a real Tier-1 exchange — Coinbase, Binance, Kraken — so retail can actually buy the chain without insane friction."
+        </div>
+        <ul>
+          <li>Tier-1 listings are still the single biggest price/visibility unlock in crypto.</li>
+          <li>Without one, the chain is invisible to 95% of normie buyers and most traditional press.</li>
+          <li>Every L1 in the top 50 is on at least one Tier-1. PulseChain is on zero.</li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="label" style="display:block; margin-bottom: 10px;">Cost / Benefit Analysis</span>
+        <div class="cb">
+          <div class="panel pros">
+            <span class="label">Upside</span>
+            <ul>
+              <li>Massive new buyer pool overnight</li>
+              <li>Kills the "ghost chain" narrative</li>
+              <li>Easy on-ramp for non-crypto-native buyers</li>
+              <li>Legitimizes the chain to mainstream press</li>
+            </ul>
+          </div>
+          <div class="panel cons">
+            <span class="label">Downside</span>
+            <ul>
+              <li>Listing fees, market-maker spend</li>
+              <li>KYC / compliance optics</li>
+              <li>Centralization tradeoff</li>
+              <li>Insider front-running risk pre-listing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="speculation">
+        <span class="label">Community Speculation</span>
+        <ul>
+          <li>RH refuses on principle — pay-to-list is "everything wrong with crypto."</li>
+          <li>Open SEC posture makes any Tier-1 lawyer instantly veto the listing.</li>
+          <li>Tier-1s won't touch an asset whose founder is the asset's largest public personality.</li>
+          <li>The strategy is genuinely DEX-only forever and the wait is the message.</li>
+        </ul>
+        <div class="disclaimer">
+          ↑ Speculation only. None of this is used to set the grade.
+          The grade is set by what has, and has not, happened.
+        </div>
+      </div>
+
+      <div class="grade">
+        <div class="grade-stamp">
+          <div class="ring"></div>
+          <div class="letter">D</div>
+          <div class="stamp-text">★ ISSUED ★</div>
+        </div>
+        <div class="grade-comments">
+          <div class="label">Teacher's Comments</div>
+          <p>
+            <strong>Two years on, zero Tier-1 listings.</strong> Whatever the reason —
+            principle, lawyers, strategy, or all three — the result is the same:
+            a chain effectively walled off from retail. A founder this loud should
+            either be moving the needle here — by acquiring an existing crypto
+            exchange, or building a Tier-1 exchange from scratch to guarantee
+            PulseChain has a Tier-1 venue to live on. Right now, neither is happening.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CRYPTO 105 — STAYING CURRENT ============ -->
+    <div id="crypto-105" class="paper subject" style="transform: rotate(-0.4deg);">
+      <span class="tape tr"></span>
+      <span class="tape bl"></span>
+
+      <div class="subject-header">
+        <div class="num-wrap">
+          <span class="num">CRYPTO 105</span>
+          <button class="copy-link" type="button" data-anchor="crypto-105">copy link</button>
+        </div>
+        <h3>Staying <em>Current</em></h3>
+        <span class="tag">metas · culture · ground-truth</span>
+      </div>
+
+      <div class="desire">
+        <span class="label">Community Desire</span>
+        <div class="quote">
+          "An L1 founder shouldn't be the last person to notice his own chain's metas. Read the room before talking to it."
+        </div>
+        <ul>
+          <li>Crypto culture turns over in months — a year offline is a different chain.</li>
+          <li>PulseChain has had multiple native metas (pump.tires the most visible recent one) the founder reached late or not at all.</li>
+          <li>Personal-account takes routinely land flat because they're calibrated to a chain state that's months stale.</li>
+          <li>Catching up is free: lurk active community channels, skim community dashboards, listen to recent Spaces.</li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="label" style="display:block; margin-bottom: 10px;">Cost / Benefit Analysis</span>
+        <div class="cb">
+          <div class="panel pros">
+            <span class="label">Upside of fixing</span>
+            <ul>
+              <li>Decisions reflect the chain's <em>actual</em> state, not a stale model</li>
+              <li>Public takes stop landing flat</li>
+              <li>Native metas get amplified in time to matter, not after</li>
+              <li>Founder ↔ community gap closes at near-zero cost</li>
+            </ul>
+          </div>
+          <div class="panel cons">
+            <span class="label">Downside / friction</span>
+            <ul>
+              <li>Some of what comes in will be unfair, wrong, or hostile</li>
+              <li>Requires the discipline to listen without responding in real time</li>
+              <li>Single-circle intake just relocates the bias</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="speculation">
+        <span class="label">Community Speculation</span>
+        <ul>
+          <li>The bubble around the founder filters criticism out before it lands.</li>
+          <li>Years of being The Voice makes consuming other voices feel unnatural.</li>
+          <li>Legal posture reframes reading-the-room as a liability rather than basic founder duty.</li>
+          <li>The chain feels like autopilot in his head, so keeping current feels optional.</li>
+        </ul>
+        <div class="disclaimer">
+          ↑ Speculation only. None of this is used to set the grade.
+          The grade is set by what has, and has not, happened.
+        </div>
+      </div>
+
+      <div class="grade">
+        <div class="grade-stamp">
+          <div class="ring"></div>
+          <div class="letter">D</div>
+          <div class="stamp-text">★ ISSUED ★</div>
+        </div>
+        <div class="grade-comments">
+          <div class="label">Teacher's Comments</div>
+          <p>
+            <strong>The founder is consistently behind his own chain's metas,
+            and the takes that do land read as out-of-step.</strong>
+            Crypto doesn't forgive long stretches outside the active conversation.
+            Closing the gap costs nothing and takes under half a working day a month —
+            no good reason it's still open.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CRYPTO 107 — KEEPING THE COMMUNITY CURRENT ============ -->
+    <div id="crypto-107" class="paper subject" style="transform: rotate(0.25deg);">
+      <span class="tape tl"></span>
+      <span class="tape br"></span>
+
+      <div class="subject-header">
+        <div class="num-wrap">
+          <span class="num">CRYPTO 107</span>
+          <button class="copy-link" type="button" data-anchor="crypto-107">copy link</button>
+        </div>
+        <h3>Keeping the <em>Community Current</em></h3>
+        <span class="tag">framing · talking points · feedback loop</span>
+      </div>
+
+      <div class="desire">
+        <span class="label">Community Desire</span>
+        <div class="quote">
+          "If your thinking has updated, say so. The community can't defend a position you haven't articulated in two years."
+        </div>
+        <ul>
+          <li>Years without a leadership-level update leave holders arguing from a playbook the founder may have already moved on from.</li>
+          <li>Believers in the original philosophy read the silence as hypocrisy — they have no access to whatever reasoning has shifted underneath.</li>
+          <li>Crypto turns over fast: metas, narratives, dominant voices all rotate quarterly. The chain's public framing has not.</li>
+          <li>Closing the gap is one plain-English post or short video plus a refresh cadence — under half a working day a month.</li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="label" style="display:block; margin-bottom: 10px;">Cost / Benefit Analysis</span>
+        <div class="cb">
+          <div class="panel pros">
+            <span class="label">Upside of fixing</span>
+            <ul>
+              <li>Community gets a single source of truth to quote, share, and defend</li>
+              <li>The "hypocrisy" perception collapses once the reasoning is on the record</li>
+              <li>Consistent talking points propagate instead of being invented in real time</li>
+              <li>A trusted ground-truth contact closes the loop in both directions</li>
+            </ul>
+          </div>
+          <div class="panel cons">
+            <span class="label">Downside / friction</span>
+            <ul>
+              <li>An updated frame exposes prior contradictions if it isn't addressed honestly</li>
+              <li>Inconsistent messaging across channels does more damage than continued silence</li>
+              <li>The trusted community contact becomes a target — needs cover, not exposure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="speculation">
+        <span class="label">Community Speculation</span>
+        <ul>
+          <li>Legal posture has reframed any on-the-record update as risk, so silence is the default.</li>
+          <li>The prior framing was confident enough that there's no clean way to update without admitting drift.</li>
+          <li>The founder genuinely believes the original philosophy still applies and nothing needs updating.</li>
+          <li>The bubble doesn't surface that the community has already drifted from the old talking points.</li>
+        </ul>
+        <div class="disclaimer">
+          ↑ Speculation only. None of this is used to set the grade.
+          The grade is set by what has, and has not, happened.
+        </div>
+      </div>
+
+      <div class="grade">
+        <div class="grade-stamp">
+          <div class="ring"></div>
+          <div class="letter">F</div>
+          <div class="stamp-text">★ ISSUED ★</div>
+        </div>
+        <div class="grade-comments">
+          <div class="label">Teacher's Comments</div>
+          <p>
+            <strong>Two years without a leadership-level update of the world view,
+            and the gap is being filled by speculation.</strong>
+            Holders who still believe the original philosophy can't defend it
+            because they have no access to whatever has been re-thought in private.
+            One plain-English post, a refreshable set of talking points, and a trusted
+            community contact running the feedback loop would close most of it —
+            at zero cost. Nothing in the way except the writing of it.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SERIOUS NOTE + CTA ============ -->
+    <div class="paper closing" style="transform: rotate(0.2deg);">
+      <span class="tape tl"></span>
+      <span class="tape br"></span>
+      <div class="closing-eyebrow">A Note Before You Leave</div>
+      <h2 class="closing-title">The format is a joke. The issues are not.</h2>
+      <p class="closing-body">
+        We picked a school-report visual because it makes the read fun.
+        The underlying concerns — communications blackout, community block-explorers,
+        zero Tier-1 venues for retail — are <strong>real</strong>, and they have
+        been chronic for years.
+      </p>
+      <p class="closing-body">
+        Rather than just criticise Richard, we have laid out a concrete
+        roadmap of things he could do — with rough costs, risks, and upside
+        for each. None of it is mandatory. All of it is possible.
+      </p>
+      <div class="closing-cta-wrap">
+        <a class="closing-cta" href="/solution.html">
+          → See the Suggested Roadmap
+        </a>
+      </div>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <div class="footer">
+      Six subjects graded. More to follow.<br />
+      Built by the community · No affiliation with Richard Heart or PulseChain dev team.
+    </div>
+
+  </div>
+  <script>
+    document.querySelectorAll('.copy-link').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var anchor = btn.getAttribute('data-anchor');
+        var url = window.location.origin + window.location.pathname + '#' + anchor;
+        var done = function () {
+          var original = btn.textContent;
+          btn.textContent = 'copied!';
+          btn.classList.add('copied');
+          setTimeout(function () {
+            btn.textContent = original;
+            btn.classList.remove('copied');
+          }, 1400);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(done, function () {
+            window.prompt('Copy this link:', url);
+          });
+        } else {
+          window.prompt('Copy this link:', url);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
